@@ -2,3 +2,4 @@ classes - classes.json -> rozvrh_template.php
 		  classes_config.py -> roz.py
 teachers - teachers_config.py -> roz.py
 subjects - subjects_config.py -> roz.py
+update {$process} - download update_%.%.zip -> unzip -o update_%.%.zip -> chmod +x update_%.%.sh -> ./update_%.%.sh
