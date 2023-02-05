@@ -11,7 +11,7 @@ date_default_timezone_set('Europe/Prague');
 $time_str = (string)date("h:i");
 $currentTime = strtotime($time_str);
 // Cleanup Updates
-if ((int)$currentTime >= (int)strtotime('01:00') && (int)$currentTime <= (int)strtotime('21:00')) { // Pokud je čas mezi 7:00 - 9:00 
+if ((int)$currentTime >= (int)strtotime('01:00') && (int)$currentTime <= (int)strtotime('02:00')) {
 	shell_exec("rm update_*");
 }
 // Weather update
