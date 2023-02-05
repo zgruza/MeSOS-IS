@@ -5,12 +5,34 @@ $user=check_login();
 
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
-	if(isset($_POST['reload_infosys'])){
-		$msg='<div class="div_warning">Infosys data budou aktualizována. (~3 minuty)<br></div>';
+	if(isset($_POST['check_update'])){
+		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
+		$NEWEST = (float)$NEWEST;
+		$INSTALLED = (float)$__VERSION__;
+		if ($NEWEST > $INSTALLED){
+			$inj = '
+			<form method="post" id="frm-form" novalidate="">
+				<p style="color:red;">Systém se po instalaci sám restartuje!</p>
+				<input type="submit" name="install_update" class="button-success button" id="frm-save" value="Aktualizovat">
+			</form>';
+			$msg='<div class="div_warning">Je k dispozici aktualizace systému na verzi '.$NEWEST.' (Aktuální: '.$INSTALLED.')<br></div>';
+		} else {
+			$inj = '<form method="post" id="frm-form" novalidate=""><input type="submit" name="check_update" class="button-success button" id="frm-save" value="Zkontrolovat znovu"></form>';
+			$msg='<div class="div_warning">Používáš nejnovější verzi '.$INSTALLED.'<br></div>';
+		}
 	}
-	if(isset($_POST['restart'])){
-		$msg='<div class="div_warning">Infosys bude restartován. (~1 minuta)<br></div>';
+
+	if(isset($_POST['install_update'])){
+		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
+		$NEWEST = (float)$NEWEST;
+		shell_exec("wget -P /var/www/ https://github.com/zgruza/MeSOS-IS/raw/main/update_".$NEWEST.".zip");
+		shell_exec("unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/html/");
+		shell_exec("rm /var/www/update_".$NEWEST.".zip");
+		shell_exec("chmod +x /var/www/html/update_".$NEWEST.".sh");
+		shell_exec("/var/www/html/update_".$NEWEST.".sh");
+		exit();
 	}
+
 }
 ?>
 <html class=" js">
@@ -51,7 +73,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 		<tr>
 			<th class="form--w15"><label for="frm-form-form-text">Aktualizace:</label></th>
 			<td class="form--w85">
-				<form method="post" id="frm-form" novalidate=""><input type="submit" name="check_update" class="button-success button" id="frm-save" value="Zkontrolovat"></form>
+				<?php if(isset($_POST['check_update'])){ echo $inj; } else {?>
+					<form method="post" id="frm-form" novalidate=""><input type="submit" name="check_update" class="button-success button" id="frm-save" value="Zkontrolovat"></form>
+				<?php } ?>
 			</td>
 		</tr>
 		</tbody></table>
