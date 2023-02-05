@@ -1,0 +1,21 @@
+# Make Updater!! GIT
+Update 05/01/2023:
+	- Úprava celého systému
+	- Přidáno počasí
+	- Přidána Administrace
+Update 19/01/2023:
+	- Nová administrace
+		- Učitelé
+		- Třídy
+		- Předměty
+	- Změna celé struktury
+	- Instalační soubor pro RPi (jen pro RPi)
+
+Update 10/01/2023: 
+	- Fixed 0 hour
+	- Fixed PHP TimeZone
+	- Fixed yellow hour selector
+	- Actual/Next hours got Blue text color
+	- Conditions about lunch updated in CRON (Set Timer. DO NOT OVERFLOW NDLSLY)
+	- Memory dumping
+	- Installer included (You can reinstall this system on any RPi device with just one command) [install.sh]

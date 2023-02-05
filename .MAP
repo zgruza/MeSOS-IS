@@ -1,0 +1,4 @@
+classes - classes.json -> rozvrh_template.php
+		  classes_config.py -> roz.py
+teachers - teachers_config.py -> roz.py
+subjects - subjects_config.py -> roz.py
