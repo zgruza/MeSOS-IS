@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
 		$NEWEST = (float)$NEWEST;
 		shell_exec("wget -P /var/www/ https://github.com/zgruza/MeSOS-IS/raw/main/update_".$NEWEST.".zip");
-		shell_exec("unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/html/");
+		shell_exec("unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/");
 		shell_exec("rm /var/www/update_".$NEWEST.".zip");
 		shell_exec("chmod +x /var/www/html/update_".$NEWEST.".sh");
 		shell_exec("/var/www/html/update_".$NEWEST.".sh");
