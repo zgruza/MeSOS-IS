@@ -3,6 +3,8 @@ Update 05/01/2023:
 	- Úprava celého systému
 	- Přidáno počasí
 	- Přidána Administrace
+	- Opraven 24h formát času
+	- Přidána Časová zóna (pro případ, že v Enginu není [správně] specifikováno)
 Update 19/01/2023:
 	- Nová administrace
 		- Učitelé
