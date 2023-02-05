@@ -13,7 +13,7 @@ apt install software-properties-common -y
 #add-apt-repository ppa:ondrej/php -y
 apt install apt-transport-https lsb-release ca-certificates wget -y
 apt install apache2 -y
-apt install git -y
+apt install unzip -y
 wget -qO /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 apt update
