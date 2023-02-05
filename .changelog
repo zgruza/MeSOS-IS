@@ -1,8 +1,7 @@
 # Make Updater!! GIT
 Update 05/01/2023:
-	- Úprava celého systému
+	- Úprava struktury
 	- Přidáno počasí
-	- Přidána Administrace
 	- Opraven 24h formát času
 	- Přidána Časová zóna (pro případ, že v Enginu není [správně] specifikováno)
 Update 19/01/2023:
