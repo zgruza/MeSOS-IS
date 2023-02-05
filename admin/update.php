@@ -7,6 +7,7 @@ $user=check_login();
 if($_SERVER['REQUEST_METHOD']==='POST'){
 	if(isset($_POST['check_update'])){
 		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
+		$changelog = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.changelog");
 		$NEWEST = (float)$NEWEST;
 		$INSTALLED = (float)$__VERSION__;
 		if ($NEWEST > $INSTALLED){
@@ -15,6 +16,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 				<p style="color:red;">Systém se po instalaci sám restartuje!</p>
 				<input type="submit" name="install_update" class="button-success button" id="frm-save" value="Aktualizovat">
 			</form>';
+			$inj_cl = '
+			<textarea name="changelog" id="changelog" style="min-height: 20em" readonly="">'.$changelog.'</textarea>';
 			$msg='<div class="div_warning">Je k dispozici aktualizace systému na verzi '.$NEWEST.' (Aktuální: '.$INSTALLED.')<br></div>';
 		} else {
 			$inj = '<form method="post" id="frm-form" novalidate=""><input type="submit" name="check_update" class="button-success button" id="frm-save" value="Zkontrolovat znovu"></form>';
@@ -25,11 +28,11 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 	if(isset($_POST['install_update'])){
 		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
 		$NEWEST = (float)$NEWEST;
-		shell_exec("wget -P /var/www/ https://github.com/zgruza/MeSOS-IS/raw/main/update_".$NEWEST.".zip");
-		shell_exec("unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/");
-		shell_exec("rm /var/www/update_".$NEWEST.".zip");
-		shell_exec("chmod +x /var/www/html/update_".$NEWEST.".sh");
-		shell_exec("/var/www/html/update_".$NEWEST.".sh");
+		shell_exec("sudo wget -P /var/www/ https://github.com/zgruza/MeSOS-IS/raw/main/update_".$NEWEST.".zip");
+		shell_exec("sudo unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/");
+		shell_exec("sudo rm /var/www/update_".$NEWEST.".zip");
+		shell_exec("sudo chmod +x /var/www/html/update_".$NEWEST.".sh");
+		shell_exec("sudo /var/www/html/update_".$NEWEST.".sh");
 		exit();
 	}
 
@@ -79,7 +82,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 			</td>
 		</tr>
 		</tbody></table>
-
+		<?php if(isset($_POST['check_update'])){ echo $inj_cl; }?>
 		<div bis_skin_checked="1"><input type="hidden" name="do" value="form-submit"></div>
 			</div>
 		</div>
