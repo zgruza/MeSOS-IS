@@ -20,7 +20,7 @@ shell_exec("sudo chmod 777 forecast.json");
 		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('rozvrh');" id="rozvrh_btn" class="btn btn-warning"><img src="/img/calendar.png?3" width="24" height="24" /></a></li>
 		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('jidelnicek');" id="lunch_btn" class="btn btn-warning"><img src="/img/lunch.png?3" width="24" height="24" /></a></li>
 		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('busy');" id="busy_btn" class="btn btn-warning"><img src="/img/bus.png?3" width="24" height="24" /></a></li>
-		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('weather');" id="weather_btn" class="btn btn-warning"><img src="/img/weather.png?3" width="24" height="24" /></a></li>
+		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('weather');" id="weather_btn" class="btn btn-warning"><img src="/img/w_n.png?3" width="24" height="24" /></a></li>
 		  </ul>
 		</nav>
 
