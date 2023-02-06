@@ -4,7 +4,7 @@ Update 06/02/2023 (verze 1.3):
 	- Minifikace HTML, CSS, JavaScript pro lepší optimalizaci
 	- Funkce OnMouseMove odstraněna + Odstraněn naslouchač na výpočet % při pohybu myši (+optimalizace)
 	- Opraven Bug při přepínání stránek
-	- Opraven Bug v Updatu
+	- Opraven Bug v Updateru
 Update 05/02/2023:
 	- Úprava struktury
 	- Přidáno počasí
