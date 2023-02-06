@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 	}
 
 	if(isset($_POST['install_update'])){
-		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
+		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION?".time());
 		$NEWEST = (float)$NEWEST;
 		shell_exec("sudo wget -P /var/www/ https://github.com/zgruza/MeSOS-IS/raw/main/update_".$NEWEST.".zip");
 		shell_exec("sudo unzip -o /var/www/update_".$NEWEST.".zip -d /var/www/");
