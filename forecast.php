@@ -57,7 +57,7 @@ $h = date('H');
 ?>
 <!-- Current Weather -->
 	<div id="current" class="wrapper_w">
-		<h1 class="location">Klobouky u Brna</h1>
+		<h1 class="location_w">Klobouky u Brna</h1>
 		<h2 class="date" id="cur_d"><?=$days[date('l')].", ".date('d')." ".$months[date('M')];?></h2>
 		<div class="weatherIcon" id="main_icon">
 			<?=BigIconPassHourly();?>
