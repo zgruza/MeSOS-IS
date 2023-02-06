@@ -6,8 +6,8 @@ $user=check_login();
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
 	if(isset($_POST['check_update'])){
-		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION");
-		$changelog = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.changelog");
+		$NEWEST = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.VERSION?".time());
+		$changelog = file_get_contents("https://raw.githubusercontent.com/zgruza/MeSOS-IS/main/.changelog?".time());
 		$NEWEST = (float)$NEWEST;
 		$INSTALLED = (float)$__VERSION__;
 		if ($NEWEST > $INSTALLED){
