@@ -17,10 +17,10 @@ shell_exec("sudo chmod 777 forecast.json");
 		<nav class="navigation" style="padding-left: 96%;padding-top: 15%;z-index: 9999999">
 		  <ul class="mainmenu">
 		  	<!--<li id="fs" style="margin-bottom: 0.3rem;"><a id="Event__Clicker" name="Event__Clicker" href="#" onclick='GoFullScreen();' class="btn btn-warning"><img src="/img/full_screen.png?2" width="24" height="24" /></a></li>-->
-		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('rozvrh');" id="rozvrh_btn" class="btn btn-warning"><img src="/img/calendar.png?3" width="24" height="24" /></a></li>
-		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('jidelnicek');" id="lunch_btn" class="btn btn-warning"><img src="/img/lunch.png?3" width="24" height="24" /></a></li>
-		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('busy');" id="busy_btn" class="btn btn-warning"><img src="/img/bus.png?3" width="24" height="24" /></a></li>
-		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('weather');" id="weather_btn" class="btn btn-warning"><img src="/img/w_n.png?3" width="24" height="24" /></a></li>
+		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('rozvrh');" id="rozvrh_btn" class="btn btn-warning"><img src="/img/calendar.png?3" width="30" height="30" /></a></li>
+		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('jidelnicek');" id="lunch_btn" class="btn btn-warning"><img src="/img/lunch.png?3" width="30" height="30" /></a></li>
+		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('busy');" id="busy_btn" class="btn btn-warning"><img src="/img/bus.png?3" width="30" height="30" /></a></li>
+		    <li style="margin-bottom: 0.3rem;"><a href="#" onclick="openPage('weather');" id="weather_btn" class="btn btn-warning"><img src="/img/w_n.png?3" width="30" height="30" /></a></li>
 		  </ul>
 		</nav>
 
@@ -239,7 +239,7 @@ body {overflow: hidden;}
 .centerblock_jidelna {display: block;margin-left: auto;margin-right: auto;width: 70%;margin-top: 0px;}
 .header_top {position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;}
 .header {box-sizing: border-box;width: 100%;height: 10%;text-align: left;padding-left: 20px;background: #ffca2c;color: white;}
-.active{padding: 1rem !important;transform: scale(1);transition: 0.15s all ease;/*width: calc(100% + 25px); height: calc(100% + 25px);*/}
+.active{padding: 1rem !important;transform: scale(1.2);transition: 0.15s all ease;/*width: calc(100% + 25px); height: calc(100% + 25px);*/}
 .jidelna_group {display: flex;padding-top: 0.5%;}
 .jid_sep {flex: 50%;padding: 0px;}
 #cursor{pointer-events: none;position: absolute;}
