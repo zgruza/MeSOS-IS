@@ -1,5 +1,5 @@
 <?php
-$__VERSION__ = "1.2";
+$__VERSION__ = "1.3";
 $admin_user = "admin";
 $admin_passwd = "admin";
 
