@@ -7,11 +7,18 @@
 //shell_exec("convert -density 300 rozvrh.pdf rozvrh.jpg");
 	// Convert JSON
 //	shell_exec("python3.8 py.py");
+$_INSTALL_REPOSITORY_AUTO_ = True;
 date_default_timezone_set('Europe/Prague');
 $time_str = (string)date("h:i");
 $currentTime = strtotime($time_str);
+
+// Auto updates
+if ((int)$currentTime >= (int)strtotime('01:00') && (int)$currentTime <= (int)strtotime('02:00') && $_INSTALL_REPOSITORY_AUTO_) { // Čištění zbytkových souborů po aktualizaci
+	shell_exec("sudo apt-get update && apt-get upgrade -y");
+}
+
 // Cleanup Updates
-if ((int)$currentTime >= (int)strtotime('01:00') && (int)$currentTime <= (int)strtotime('02:00')) {
+if ((int)$currentTime >= (int)strtotime('02:00') && (int)$currentTime <= (int)strtotime('03:00')) {
 	shell_exec("rm update_*");
 }
 // Weather update
@@ -27,6 +34,7 @@ if ((int)$currentTime >= (int)strtotime('07:00') && (int)$currentTime <= (int)st
 		shell_exec("convert -density 300 jidelnicek.pdf jidelnicek.jpg");
 		shell_exec("rm jidelnicek.pdf");
 }
+unset($_INSTALL_REPOSITORY_AUTO_);
 unset($time_str);
 unset($currentTime);
 // Timetable
