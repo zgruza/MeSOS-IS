@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Prague');
 $days = array("Sunday"=>"Neděle","Monday"=>"Pondělí","Tuesday"=>"Úterý","Wednesday"=>"Středa","Thursday"=>"Čtvrtek","Friday"=>"Pátek","Saturday"=>"Sobota");
-$months = array("Jan"=>"Leden", "Feb"=>"Únor", "Mar"=>"Březen", "Apr"=>"Duben", "May"=>"Květen", "Jun"=>"Červen","Jul"=>"Červenec", "Aug"=>"Srpen", "Sep"=>"Září", "Oct"=>"Říjen", "Nov"=>"Listopad", "Dec"=>"Prosinec");
+$months = array("Jan"=>"leden", "Feb"=>"únor", "Mar"=>"březen", "Apr"=>"duben", "May"=>"květen", "Jun"=>"červen","Jul"=>"červenec", "Aug"=>"srpen", "Sep"=>"září", "Oct"=>"říjen", "Nov"=>"listopad", "Dec"=>"prosinec");
 $json = json_decode(file_get_contents("http://127.0.0.1/forecast.json"), true)['forecast']['forecastday'];
 function IconPass($item_no){
 	global $json;
@@ -30,7 +30,7 @@ function IconPass($item_no){
 }
 function BigIconPassHourly(){
 	global $json;
-	$currentHour = date('H');
+	$currentHour = date('G');
 	if($json[0]['hour'][$currentHour]['will_it_snow'] == "1" || $json[0]['hour'][$currentHour]['chance_of_snow'] <> "0"){
 		return "<div class=\"snowy_main\">";
 	}
@@ -58,7 +58,7 @@ $h = date('G');
 <!-- Current Weather -->
 	<div id="current" class="wrapper_w">
 		<h1 class="location_w">Klobouky u Brna</h1>
-		<h2 class="date" id="cur_d"><?=$days[date('l')].", ".date('d')." ".$months[date('M')];?></h2>
+		<h2 class="date" id="cur_d"><?=$days[date('l')].", ".date('j').". ".$months[date('M')];?></h2>
 		<div class="weatherIcon" id="main_icon">
 			<?=BigIconPassHourly();?>
 			</div>
