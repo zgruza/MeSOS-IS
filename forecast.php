@@ -53,7 +53,7 @@ function BigIconPassHourly(){
 		return '<div class="sun"><img class="sunny_main" src=\'/assets/clear-day.svg\'/>';
 	}
 }
-$h = date('H');
+$h = date('G');
 ?>
 <!-- Current Weather -->
 	<div id="current" class="wrapper_w">
