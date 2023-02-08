@@ -81,7 +81,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 				<div id="footer-inner">
 					<p class="footer-muted">
 						Developed by <a href="">Robotika Gang</a>,
-						MěSOŠ Informační systém <span>1.2</span>.
+						MěSOŠ Informační systém <span><?=$__VERSION__;?></span>.
 					</p>
 				</div>
 			</div>
