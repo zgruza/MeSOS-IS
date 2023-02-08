@@ -20,6 +20,7 @@ if ((int)$currentTime >= (int)strtotime('01:00') && (int)$currentTime <= (int)st
 // Cleanup Updates
 if ((int)$currentTime >= (int)strtotime('02:00') && (int)$currentTime <= (int)strtotime('03:00')) {
 	shell_exec("rm update_*");
+	shell_exec("sudo apt clean");
 }
 // Weather update
 if ((int)$currentTime >= (int)strtotime('07:00') && (int)$currentTime <= (int)strtotime('09:00')) { // Pokud je čas mezi 7:00 - 9:00 
