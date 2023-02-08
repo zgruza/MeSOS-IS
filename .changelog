@@ -1,3 +1,11 @@
+Update 08/02/2023 (verze 1.4):
+	- Úprava CSS
+	- Automat. aktualizace všech repozitářů (Možnost přenastavit v Admin>Systém)
+	- Minifikace HTML, CSS, JavaScript pro lepší optimalizaci
+	- Oprava chyby v získávání aktuálního času (0 escape)
+	- Funkce OnMouseMove revertována
+	- Oprava zobrazování měsíců v počasí (gramatika)
+	- Oprava všech práv (chmod)
 Update 06/02/2023 (verze 1.3):
 	- Úprava CSS
 	- Lepší ikonka počasí
